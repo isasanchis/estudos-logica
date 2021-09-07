@@ -1,0 +1,14 @@
+<div id="app">
+</div>
+
+<script>
+    let A = parseFloat(prompt("Digite o número de A."));
+    let B = parseFloat(prompt("Digite o número de B."));
+    let C = parseFloat(prompt("Digite o número de C."));
+
+    let delta = Math.pow(B, 2) - 4 * A * C;
+
+    let documento = document.getElementById("app");
+    documento.innerText = `O valor de delta é ${delta}.`;
+
+</script>

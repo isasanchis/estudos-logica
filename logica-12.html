@@ -1,0 +1,43 @@
+<div id="app">
+</div>
+
+<form id="formulario">
+    <input type="number" id="inputNumero" placeholder="Somente números inteiros" min=0 step=1>
+    <input type="submit" value="Enviar">
+</form>
+
+<div id="app2">
+</div>
+
+<style>
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
+
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+
+</style>
+
+<script>
+    let documento = document.getElementById("app");
+    documento.innerHTML = `<h2>Insira o salário atual do funcionário:</h2>`;
+
+    var form = document.getElementById("formulario");
+
+    form.addEventListener('submit', function(e){
+        var salarioAntigo = parseFloat(document.getElementById("inputNumero").value);
+
+        var aumento = salarioAntigo * 0.15;
+
+        var salarioNovo = salarioAntigo + aumento;
+
+        var documento2 = document.getElementById('app2');
+        documento2.innerHTML = `<h2>O salário atual é: R$${salarioNovo}.</h2>`;
+
+        e.preventDefault();
+    });
+</script>

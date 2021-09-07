@@ -1,0 +1,13 @@
+<div id="app">
+</div>
+
+<script>
+    let numeroEscolhido = parseFloat(prompt("Digite um número."));
+    let dobroNumero = numeroEscolhido * 2;
+    let tercaNumero = (numeroEscolhido / 3).toFixed(2);
+
+    let documento = document.getElementById("app");
+
+    documento.innerHTML = `<h2>O dobro de ${numeroEscolhido} é ${dobroNumero}.<hr>
+                            A terça parte de ${numeroEscolhido} é ${tercaNumero}.</h2>`;
+</script>

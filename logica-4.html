@@ -1,0 +1,12 @@
+<div id="app">
+</div>
+
+<script>
+    let primeiraNota = parseFloat(prompt("Digite a primeira nota."));
+    let segundaNota = parseFloat(prompt("Digite a segunda nota."));
+    let media = (primeiraNota + segundaNota)/2;
+    let documento = document.getElementById("app");
+
+    documento.innerHTML = `<h1>A média entre ${primeiraNota} e ${segundaNota} é igual a ${media}</h1>`;
+    
+</script>

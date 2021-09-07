@@ -1,0 +1,47 @@
+<form id="formulario">
+
+    <p>Quantos cigarros você fuma por dia?</p>
+    <input type="number" id="inputQtd" placeholder="Cigarros/dia" step=1 min=0>
+    <p>Há quantos anos você fuma?</p>
+    <input type="number" id="inputAnos" placeholder="Anos" step=1 min=0>
+    <input type="submit" value="Enviar">
+
+</form>
+
+<div id="app">
+</div>
+
+<style>
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
+
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+
+</style>
+
+<script>
+
+    var form = document.getElementById("formulario");
+
+    form.addEventListener('submit', function(e){
+        
+        let cigarrosDia = parseInt(document.getElementById("inputQtd").value);
+        let anosFumados = parseInt(document.getElementById("inputAnos").value);
+
+        let anosEmDias = anosFumados * 365;
+
+        let diasPerdidos = (0.00694 * cigarrosDia * anosEmDias).toFixed(2);
+
+        const documento = document.getElementById("app");
+        documento.innerHTML = `<h3>Você está perdendo ${diasPerdidos} dias de sua vida.</h3>`;
+
+        e.preventDefault();
+
+    });
+
+</script>

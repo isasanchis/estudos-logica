@@ -1,0 +1,71 @@
+<form id="formulario">
+    <fieldset>
+        <legend>Promoção: Dia das Mulheres!</legend>
+        <br>
+        <label for="inputNome">Digite o seu nome</label>
+        <input type="text" id="inputNome" name="inputNome" placeholder="Nome" style="margin-bottom: 10px;">
+
+        <br>
+
+        <label for="inputSexo">Qual é o seu sexo?</label>
+        <select name="sexo" id="selectSexo" style="margin-bottom: 10px;">
+            <option selected value="feminino">Feminino</option>
+            <option id="opcMasculino" value="masculino">Masculino</option>
+        </select>
+
+        <br>
+
+        <label for="inputCompras">Qual foi o valor de suas compras?</label>
+        <input type="number" id="inputCompras" step=0.01 min=0 placeholder="Valor" style="margin-bottom: 10px;">
+
+        <br>
+
+        <input type="submit" value="Enviar">
+    </fieldset>
+</form>
+
+<div id="app">
+</div>
+
+<style>
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
+
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+
+</style>
+
+<script>
+
+    var form = document.getElementById("formulario");
+
+    form.addEventListener('submit', function(e){
+
+        let nome = document.getElementById("inputNome").value;
+        let sexoFem = document.getElementById("selectSexo").options[document.getElementById("selectSexo").selectedIndex].value;
+        let compras = parseFloat(document.getElementById("inputCompras").value);
+
+        const documento = document.getElementById("app");
+
+        if(sexoFem == "feminino") {
+            console.log(sexoFem)
+            let descontoFem = compras * 0.13;
+            let novoValorFem = compras - descontoFem;
+
+            documento.innerHTML = `O novo valor das suas compras, com desconto, é R$${novoValorFem}.` 
+        } else {
+            let descontoMasc = compras * 0.05;
+            let novoValorMasc = compras - descontoMasc;
+
+            documento.innerHTML = `O novo valor das suas compras, com desconto, é R$${novoValorMasc}.` 
+        }
+
+        e.preventDefault();
+    });
+
+</script>

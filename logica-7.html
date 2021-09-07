@@ -1,0 +1,22 @@
+<div id="app">
+</div>
+
+<script>
+    let distanciaEscolhida = parseFloat(prompt("Digite uma distância em metros."));
+    let km = distanciaEscolhida/1000;
+    let hm = distanciaEscolhida/100;
+    let dam = distanciaEscolhida/10;
+    let dm = distanciaEscolhida*10;
+    let cm = distanciaEscolhida*100;
+    let mm = distanciaEscolhida*1000;
+
+    let documento = document.getElementById("app");
+
+    documento.innerHTML = `<h2>A distância de ${distanciaEscolhida}m corresponde a:<br>
+                            ${km}Km<br>
+                            ${hm}Hm<br>
+                            ${dam}Dam<br>
+                            ${dm}Dm<br>
+                            ${cm}Cm<br>
+                            ${mm}Mm</h2>`;
+</script>

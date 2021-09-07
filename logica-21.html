@@ -1,0 +1,47 @@
+<form id="formulario">
+
+    <p>Digite o ano em que nasceu.</p>
+    <input type="number" id="inputAno" placeholder="Ano" step=1 min=0 max=2021>
+    <input type="submit" value="Enviar">
+
+</form>
+
+<div id="app">
+</div>
+
+<style>
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
+
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+
+</style>
+
+<script>
+
+    var form = document.getElementById("formulario");
+
+    form.addEventListener('submit', function(e){
+
+        let ano = parseInt(document.getElementById("inputAno").value);
+        let idadeAtual = 2021 - ano;
+
+        const documento = document.getElementById("app");
+
+        if(idadeAtual > 18) {
+            let anosPassaram = idadeAtual - 18;
+            documento.innerHTML = `Já se passaram ${anosPassaram} anos do seu alistamento militar.`
+        } else {
+            let anosFaltam = 18 - idadeAtual;
+            documento.innerHTML = `Faltam ${anosFaltam} anos para o seu alistamento militar.`
+        }
+
+        e.preventDefault();
+    });
+
+</script>

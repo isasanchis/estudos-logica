@@ -1,0 +1,12 @@
+<div id="app">
+</div>
+
+<script>
+    let precoProduto = parseFloat(prompt("Qual é o preço do produto?"));
+    let desconto = precoProduto * 0.05;
+    let precoPromocional = precoProduto - desconto;
+
+    let documento = document.getElementById("app");
+    
+    documento.innerText = `O preço promocional é ${precoPromocional}.`;
+</script>

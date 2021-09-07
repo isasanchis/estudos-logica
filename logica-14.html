@@ -1,0 +1,40 @@
+<form id="formulario">
+
+    <p>Número de dias trabalhados no mês:</p>
+    <input type="number" id="inputDias" placeholder="Dias trabalhados" step=1 min=0>
+    <input type="submit" value="Enviar">
+
+</form>
+
+<div id="app">
+</div>
+
+<style>
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
+
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+
+</style>
+
+<script>
+
+    var form = document.getElementById("formulario");
+
+    form.addEventListener('submit', function(e){
+        let diasTrabalhados = parseInt(document.getElementById('inputDias').value);
+
+        let calcSalario = diasTrabalhados * 8 * 25;
+
+        const documento = document.getElementById("app");
+        documento.innerHTML = `<h3>O salário é de R$${calcSalario}.</h3>`;
+
+        e.preventDefault();
+    });
+
+</script>

@@ -1,0 +1,13 @@
+<div id="app">
+</div>
+
+<script>
+    let chosenNumber = parseInt(prompt("Digite um número inteiro."));
+    let beforeNumber = chosenNumber - 1;
+    let afterNumber = chosenNumber + 1;
+
+    let documentApp = document.getElementById("app");
+
+    documentApp.innerHTML = `<h2>O antecessor de ${chosenNumber} é ${beforeNumber}.<hr>
+                            O sucessor de ${chosenNumber} é ${afterNumber}.</h2>`;
+</script>

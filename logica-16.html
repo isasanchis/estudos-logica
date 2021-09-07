@@ -1,0 +1,44 @@
+<form id="formulario">
+
+    <p>Qual é a velocidade do carro?</p>
+    <input type="number" id="inputVeloc" placeholder="Velocidade" step=0.1 min=0>
+    <input type="submit" value="Enviar">
+
+</form>
+
+<div id="app">
+</div>
+
+<style>
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
+
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+
+</style>
+
+<script>
+
+    var form = document.getElementById("formulario");
+
+    form.addEventListener('submit', function(e){
+
+        let velocidade = parseFloat(document.getElementById("inputVeloc").value);
+        const documento = document.getElementById("app");
+
+        if(velocidade > 80) {
+            let valorMulta = (velocidade - 80) * 5;
+            documento.innerHTML = `<h3>Você foi multado. Valor da multa: R$${valorMulta}.</h3>`;
+        } else {
+            documento.innerHTML = `<h3>Você está dentro do limite de velocidade. Continue assim!</h3>`;
+        }
+
+        e.preventDefault();
+    });
+
+</script>

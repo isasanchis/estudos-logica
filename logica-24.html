@@ -1,0 +1,55 @@
+<form id="formulario">
+    <fieldset>
+        <legend>Digite os segmentos das três retas nos campos abaixo:</legend>
+
+        <label>Reta 1:</label>
+        <input type="number" id="inputUm" step=1 min=0 placeholder="Ex: 5cm" style="margin-bottom: 10px;">
+        <br>
+
+        <label>Reta 2:</label>
+        <input type="number" id="inputDois" step=1 min=0 placeholder="Ex: 5cm" style="margin-bottom: 10px;">
+        <br>
+
+        <label>Reta 3:</label>
+        <input type="number" id="inputTres" step=1 min=0 placeholder="Ex: 5cm" style="margin-bottom: 10px;">
+        <br>
+
+        <input type="submit" value="Enviar">
+    </fieldset>
+</form>
+
+<div id="app">
+</div>
+
+<style>
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
+
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+</style>
+
+<script>
+    let form = document.getElementById("formulario");
+
+    form.addEventListener('submit', function(e){
+        let retaUm = parseInt(document.getElementById("inputUm").value);
+        let retaDois = parseInt(document.getElementById("inputDois").value);
+        let retaTres = parseInt(document.getElementById("inputTres").value);
+
+        const documento = document.getElementById("app");
+
+        if(retaUm < (retaDois + retaTres) && retaDois < (retaUm + retaTres) && retaTres < (retaUm + retaDois)) {
+            documento.innerText = `É possível criar um triângulo com as respectivas retas.`
+        } else {    
+            documento.innerText = `Não é possível criar um triângulo com as respectivas retas.`
+        }
+
+        e.preventDefault();
+    });
+
+</script>

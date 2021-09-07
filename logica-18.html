@@ -1,0 +1,53 @@
+<form id="formulario">
+
+    <p>Digite seu nome.</p>
+    <input type="text" id="inputNome" placeholder="Nome">
+    <p>Digite a sua primeira nota.</p>
+    <input type="number" id="inputNotaUm" placeholder="Nota 1" step=0.1 min=0>
+    <p>Digite a sua segunda nota.</p>
+    <input type="number" id="inputNotaDois" placeholder="Nota 2" step=0.1 min=0>
+    <input type="submit" value="Enviar">
+
+</form>
+
+<div id="app">
+</div>
+
+<style>
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
+
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+
+</style>
+
+<script>
+
+    var form = document.getElementById("formulario");
+
+    form.addEventListener('submit', function(e){
+
+        let nome = document.getElementById("inputNome").value
+        let notaUm = parseFloat(document.getElementById("inputNotaUm").value);
+        let notaDois = parseFloat(document.getElementById("inputNotaDois").value);
+        let media = (notaUm + notaDois)/2;
+
+        const documento = document.getElementById("app");
+
+        if(media >= 7 && media <= 10) {
+            documento.innerHTML = `Parabéns, ${nome}! Você teve um ótimo aproveitamento.`
+        } else if(media < 7) {
+            documento.innerHTML = `Infelizmente você não teve um bom aproveitamento.`
+        } else {
+            documento.innerHTML = `Insira notas válidas.`
+        }
+
+        e.preventDefault();
+    });
+
+</script>

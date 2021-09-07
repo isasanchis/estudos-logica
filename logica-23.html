@@ -1,0 +1,49 @@
+<form id="formulario">
+
+    <label for="inputViagem">Qual distância deseja percorrer (em Km)?</label>
+    <input type="number" id="inputViagem" step=0.01 min=0 placeholder="Distância">
+
+    <input type="submit" value="Enviar">
+</form>
+
+<div id="app">
+</div>
+
+<style>
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
+
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+
+</style>
+
+<script>
+
+    var form = document.getElementById("formulario");
+
+    form.addEventListener('submit', function(e){
+
+        let distancia = parseFloat(document.getElementById("inputViagem").value);
+
+        const documento = document.getElementById("app");
+
+        if(distancia < 200) {
+            let viagemCurta = distancia * 0.5;
+
+            documento.innerHTML = `O preço da passagem é R$${viagemCurta}.`
+
+        } else {
+            let viagemLonga = distancia * 0.45;
+
+            documento.innerHTML = `O preço da passagem é R$${viagemLonga}.`
+        }
+
+        e.preventDefault();
+    });
+
+</script>

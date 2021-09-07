@@ -1,0 +1,45 @@
+<form id="formulario">
+
+    <p>Insira a quantidade de KMs percorridos pelo carro:</p>
+    <input type="number" id="inputKm" placeholder="Km" min=0 step=0.01>
+
+    <p>Quantos dias o carro ficou alugado?</p>
+    <input type="number" id="inputDias" placeholder="Dias" min=0 step=1>
+
+    <input type="submit" value="Enviar">
+
+</form>
+
+<div id="app">
+</div>
+
+<style>
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
+
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+
+</style>
+
+<script>
+
+    var form = document.getElementById("formulario");
+
+    form.addEventListener('submit', function(e){
+        let kmRodados = parseFloat(document.getElementById("inputKm").value);
+        let diasAlugados = parseInt(document.getElementById("inputDias").value);
+
+        let totalPagar = (kmRodados * 0.2) + (diasAlugados * 90);
+
+        const documento = document.getElementById("app");
+        documento.innerHTML = `<h3>O total a pagar é de R$${totalPagar}.</h3>`;
+
+        e.preventDefault();
+    });
+
+</script>

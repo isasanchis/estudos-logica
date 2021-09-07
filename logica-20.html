@@ -1,0 +1,44 @@
+<form id="formulario">
+
+    <p>Digite um ano para saber se é bissexto.</p>
+    <input type="number" id="inputAno" placeholder="Ano" step=1 min=0>
+    <input type="submit" value="Enviar">
+
+</form>
+
+<div id="app">
+</div>
+
+<style>
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
+
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+
+</style>
+
+<script>
+
+    var form = document.getElementById("formulario");
+
+    form.addEventListener('submit', function(e){
+
+        let ano = parseInt(document.getElementById("inputAno").value);
+
+        const documento = document.getElementById("app");
+
+        if((ano % 4 === 0) || (ano % 100 === 0) && (ano % 400 == 0)){
+            documento.innerHTML = `O ano ${ano} é bissexto.`
+        } else {
+            documento.innerHTML = `O ano ${ano} não é bissexto.`
+        }
+
+        e.preventDefault();
+    });
+
+</script>
