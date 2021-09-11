@@ -1,0 +1,50 @@
+<form id="formulario">
+	<fieldset>
+		<legend>Jokenpo!</legend>
+
+		<label for="jokenPo">Escolha:</label>
+		<select name="escolha" id="jokenPo" style="margin-bottom: 10px;">
+			<option value="pedra">Pedra</option>
+			<option value="papel">Papel</option>
+			<option value="tesoura">Tesoura</option>
+		</select>
+		<br>
+
+		<input type="submit" value="Enviar">
+	</fieldset>
+</form>
+
+<div id="app">
+</div>
+
+<style>
+input[type=number]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+input[type=number] {
+	-moz-appearance: textfield;
+	appearance: textfield;
+}
+</style>
+
+<script>
+	let form = document.getElementById("formulario");
+
+	form.addEventListener('submit', function(e){
+
+		let escolha = document.getElementById("jokenPo").value;
+
+		const documento = document.getElementById("app");
+
+		if(escolha) {
+			let opcoes = ["Pedra","Papel","Tesoura"];
+			let aleatorio = opcoes[Math.floor(Math.random()*opcoes.length)];
+			documento.innerHTML = `${aleatorio}`;
+		}
+
+		e.preventDefault();
+
+	});
+
+</script>

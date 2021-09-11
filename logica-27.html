@@ -1,0 +1,53 @@
+<form id="formulario">
+    <fieldset>
+        <legend>Digite abaixo a largura e o comprimento do terreno (em m):</legend>
+
+        <label>Largura:</label>
+        <input type="number" id="inputLargura" step=1 min=0 placeholder="Largura" style="margin-bottom: 10px;">
+        <br>
+
+        <label>Comprimento:</label>
+        <input type="number" id="inputComp" step=1 min=0 placeholder="Comprimento" style="margin-bottom: 10px;">
+        <br>
+
+        <input type="submit" value="Enviar">
+    </fieldset>
+</form>
+
+<div id="app">
+</div>
+
+<style>
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
+
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+</style>
+
+<script>
+    let form = document.getElementById("formulario");
+
+    form.addEventListener('submit', function(e){
+
+        let largura = parseInt(document.getElementById("inputLargura").value);
+        let comprimento = parseInt(document.getElementById("inputComp").value);
+        let area = largura * comprimento;
+
+        const documento = document.getElementById("app");
+
+        if(area < 100) {
+            documento.innerHTML = `TERRENO POPULAR. Área: ${area}m².`
+        } else if(area > 100 && area < 500) {
+            documento.innerHTML = `TERRENO MASTER. Área: ${area}m².`
+        } else if(area > 500){
+            documento.innerHTML = `TERRENO VIP. Área: ${area}m².`
+        }
+
+        e.preventDefault();
+    });
+
+</script>

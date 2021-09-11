@@ -9,8 +9,8 @@
 
         <label for="inputSexo">Qual é o seu sexo?</label>
         <select name="sexo" id="selectSexo" style="margin-bottom: 10px;">
-            <option selected value="feminino">Feminino</option>
-            <option id="opcMasculino" value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="masculino">Masculino</option>
         </select>
 
         <br>
@@ -47,13 +47,12 @@ input[type=number] {
     form.addEventListener('submit', function(e){
 
         let nome = document.getElementById("inputNome").value;
-        let sexoFem = document.getElementById("selectSexo").options[document.getElementById("selectSexo").selectedIndex].value;
+        let sexo = document.getElementById("selectSexo").value;
         let compras = parseFloat(document.getElementById("inputCompras").value);
 
         const documento = document.getElementById("app");
 
-        if(sexoFem == "feminino") {
-            console.log(sexoFem)
+        if(sexo == "feminino") {
             let descontoFem = compras * 0.13;
             let novoValorFem = compras - descontoFem;
 

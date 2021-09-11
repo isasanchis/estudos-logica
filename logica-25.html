@@ -1,0 +1,53 @@
+<form id="formulario">
+    <fieldset>
+        <legend>Digite dois números inteiros:</legend>
+
+        <label>Número 1:</label>
+        <input type="number" id="inputUm" step=1 placeholder="Número inteiro" style="margin-bottom: 10px;">
+        <br>
+
+        <label>Número 2:</label>
+        <input type="number" id="inputDois" step=1 placeholder="Número inteiro" style="margin-bottom: 10px;">
+        <br>
+
+        <input type="submit" value="Enviar">
+    </fieldset>
+</form>
+
+<div id="app">
+</div>
+
+<style>
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
+
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+</style>
+
+<script>
+    let form = document.getElementById("formulario");
+
+    form.addEventListener('submit', function(e){
+
+        let numeroUm = parseInt(document.getElementById("inputUm").value);
+        let numeroDois = parseInt(document.getElementById("inputDois").value);
+
+        const documento = document.getElementById("app");
+
+        if(numeroUm > numeroDois) {
+            documento.innerHTML = `O número ${numeroUm} é maior do que ${numeroDois}.`
+        } else if (numeroUm === numeroDois) {
+            documento.innerHTML = `Não existe valor maior. Ambos são iguais.`
+        } else {
+            documento.innerHTML = `O número ${numeroDois} é maior do que ${numeroUm}.`
+        }
+
+        e.preventDefault();
+    });
+
+</script>

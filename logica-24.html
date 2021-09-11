@@ -43,10 +43,12 @@ input[type=number] {
 
         const documento = document.getElementById("app");
 
-        if(retaUm < (retaDois + retaTres) && retaDois < (retaUm + retaTres) && retaTres < (retaUm + retaDois)) {
-            documento.innerText = `É possível criar um triângulo com as respectivas retas.`
-        } else {    
-            documento.innerText = `Não é possível criar um triângulo com as respectivas retas.`
+        if(retaUm === retaDois && retaDois === retaTres) {
+            documento.innerText = `O triângulo é equilátero.`
+        } else if(retaUm === retaDois || retaUm === retaTres || retaDois === retaTres) {
+            documento.innerText = `O triângulo é isósceles.`
+        } else {
+            documento.innerText = `O triângulo é escaleno.`
         }
 
         e.preventDefault();
