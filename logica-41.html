@@ -1,0 +1,19 @@
+<script>
+let cont = 0; // variável de iteração
+let sumAboveFive = 0;
+let divByThree = 0;
+
+while(cont <= 20) { // vai iterar 20 vezes
+	let number = Math.floor(Math.random() * 10);
+	console.log(number);
+	if(number > 5) {
+		sumAboveFive++;
+	}
+	if(number % 3 === 0) {
+		divByThree++;
+	}
+	cont++; // pra não rodar infinitamente
+}
+alert("Total de números acima de 5: " + sumAboveFive + " total divisíveis por 3: " + divByThree);
+
+</script>

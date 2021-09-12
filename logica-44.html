@@ -1,0 +1,38 @@
+<script>
+let cont = 1;
+let qtdMulheres = 0;
+let qtdHomens = 0;
+let mulheresVinte = 0;
+let totalMedia = 0;
+let totalHomens = 0;
+let mediaGrupo;
+let mediaHomens;
+
+while (cont <= 5) {
+	let idade = parseInt(prompt(`Digite a idade da ${cont}ª pessoa: `));
+	let sexo = prompt(`Digite o sexo da ${cont}ª pessoa: `);
+
+	if(sexo === "masculino") {
+		qtdHomens++;
+		totalHomens+=idade++
+		mediaHomens = totalHomens/qtdHomens;
+	} else if (sexo === "feminino") {
+		qtdMulheres++;
+			if(idade > 20) {
+				mulheresVinte++;
+			}
+	}
+
+	totalMedia+=idade++;
+	mediaGrupo = totalMedia / 5;
+
+	cont++;
+}
+
+console.log("Quantidade total de homens: " + qtdHomens);
+console.log("Quantidade total de mulheres: " + qtdMulheres);
+console.log("Quantidade total de mulheres acima dos 20 anos: " + mulheresVinte);
+console.log("A média de todas as idades é: " + mediaGrupo);
+console.log("A média de todas os homens é: " + mediaHomens);
+
+</script>
