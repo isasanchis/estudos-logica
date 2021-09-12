@@ -1,0 +1,24 @@
+<form id="formulario">
+	<label for="inputNumber">Digite um número inteiro e positivo:</label>
+	<br>
+	<input type="number" id="inputNumber" min=0 placeholder="Número positivo">
+	<input type="submit" value="Enviar">
+</form>
+
+<script>
+let documento = document.getElementById("formulario");
+
+formulario.addEventListener('submit', function(e) {
+	let numeroEscolhido = document.getElementById("inputNumber").value;
+	let inicio = 0;
+	while(inicio < numeroEscolhido) {
+		inicio++;
+		document.write(inicio + "<br>");
+	}
+	
+	document.write("<br> Acabou!");
+
+	e.preventDefault();
+})
+
+</script>

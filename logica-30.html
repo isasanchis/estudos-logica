@@ -1,15 +1,9 @@
 <form id="formulario">
 	<fieldset>
-		<legend>Jokenpo!</legend>
-
-		<label for="jokenPo">Escolha:</label>
-		<select name="escolha" id="jokenPo" style="margin-bottom: 10px;">
-			<option value="pedra">Pedra</option>
-			<option value="papel">Papel</option>
-			<option value="tesoura">Tesoura</option>
-		</select>
+		<legend>Descubra o número que será sorteado!</legend>
+		<label for="inputNumero"	>O número será de 1 a 5:</label>
 		<br>
-
+			<input type="number" id="inputNumero" step=1 min=0 max=5 placeholder="Número">
 		<input type="submit" value="Enviar">
 	</fieldset>
 </form>
@@ -33,18 +27,17 @@ input[type=number] {
 
 	form.addEventListener('submit', function(e){
 
-		let escolha = document.getElementById("jokenPo").value;
+		let escolha = document.getElementById("inputNumero").value;
 
 		const documento = document.getElementById("app");
 
 		if(escolha) {
-			let opcoes = ["Pedra","Papel","Tesoura"];
+			let opcoes = ["1","2","3", "4", "5"];
 			let aleatorio = opcoes[Math.floor(Math.random()*opcoes.length)];
 			documento.innerHTML = `${aleatorio}`;
 		}
 
 		e.preventDefault();
-
 	});
 
 </script>
