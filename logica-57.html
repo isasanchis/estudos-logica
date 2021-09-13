@@ -1,0 +1,35 @@
+<script>
+let sexo;
+let peso;
+let totMulheres = 0;
+let homensNoventa = 0;
+let totalPesoM = 0;
+let mediaPesoF;
+let maiorPesoH = 0;
+
+for(let i = 0; i <= 8; i++) {
+  sexo = prompt("Digite o sexo da pessoa (F ou M)");
+  peso = parseFloat(prompt("Digite o peso da pessoa:"));
+
+  if(sexo === "M" && peso > 100) {
+    homensNoventa++;
+    if(i <= i) {
+      maiorPesoH = peso;
+    }
+  }
+
+  if(sexo === "F") {
+    totMulheres++;
+
+    totalPesoM+=peso++;
+    mediaPesoF = totalPesoM/totMulheres;
+  }
+
+}
+
+console.log("Número total de mulheres: " + totMulheres);
+console.log("Homens acima dos 100kg: " + homensNoventa);
+console.log("Média do peso feminino: " + mediaPesoF);
+console.log("Maior peso masculino: " + maiorPesoH);
+
+</script>
