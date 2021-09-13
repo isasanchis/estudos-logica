@@ -1,0 +1,46 @@
+<script>
+let numeros;
+let continuar;
+let cont = 0;
+let soma = 0;
+let pares = 0;
+let media;
+let qtdNumeros = 0;
+let menorValor = 0;
+
+do {
+  numeros = parseInt(prompt("Digite um número:"));
+  continuar = prompt("Deseja continuar? (S ou N)");
+
+  if(cont === 0) {
+    menorValor = numeros;
+  }
+
+  if(numeros < menorValor) {
+    menorValor = numeros;
+  }
+  
+  if(numeros % 2 === 0) {
+   pares++;
+  }
+
+  qtdNumeros++;
+  soma+=numeros++;
+  media = soma/qtdNumeros;
+
+  if(continuar === "S") {
+    continue;
+  } else if(continuar === "N") {
+    break;
+  }
+
+  cont++;
+
+} while(cont <= cont);
+
+console.log("A soma entre todos os valores é: " + soma);
+console.log("O total de números pares é: " + pares);
+console.log("A média de todos os números é : " + media);
+console.log("O menor número inserido é : " + menorValor);
+
+</script>
