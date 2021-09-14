@@ -1,0 +1,19 @@
+<div>
+  <button onclick="add()">Adicionar</button>
+</div>
+
+<script>
+
+let arr = [5,3,5,3,5,3,5,3,5,3];
+
+function add() {
+  let lastElement = arr[arr.length - 1];
+  if(lastElement === 3) {
+    arr.push(5);
+  } else {
+    arr.push(3);
+  }
+  console.log(arr);
+}
+
+</script>
