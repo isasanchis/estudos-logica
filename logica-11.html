@@ -3,10 +3,9 @@
 
 <script>
     let precoProduto = parseFloat(prompt("Qual é o preço do produto?"));
-    let desconto = precoProduto * 0.05;
-    let precoPromocional = precoProduto - desconto;
+    let desconto = precoProduto * 1.05;
 
     let documento = document.getElementById("app");
     
-    documento.innerText = `O preço promocional é ${precoPromocional}.`;
+    documento.innerText = `O preço promocional é ${desconto}.`;
 </script>

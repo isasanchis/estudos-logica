@@ -47,15 +47,13 @@ input[type=number] {
         const documento = document.getElementById("app");
 
         if(sexo == "feminino") {
-            let descontoFem = compras * 0.13;
-            let novoValorFem = compras - descontoFem;
+            let descontoFem = compras * 0.87;
 
-            documento.innerHTML = `O novo valor das suas compras, com desconto, é R$${novoValorFem}.` 
+            documento.innerHTML = `O novo valor das suas compras, com desconto, é R$${descontoFem}.` 
         } else {
-            let descontoMasc = compras * 0.05;
-            let novoValorMasc = compras - descontoMasc;
+            let descontoMasc = compras * 0.95;
 
-            documento.innerHTML = `O novo valor das suas compras, com desconto, é R$${novoValorMasc}.` 
+            documento.innerHTML = `O novo valor das suas compras, com desconto, é R$${descontoMasc}.` 
         }
 
         e.preventDefault();

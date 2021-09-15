@@ -29,7 +29,7 @@ input[type=number] {
 
         const documento = document.getElementById("app");
 
-        if((ano % 4 === 0) || (ano % 100 === 0) && (ano % 400 == 0)){
+        if((ano % 4 === 0) || (ano % 100 === 0) && (ano % 400 === 0)){
             documento.innerHTML = `O ano ${ano} é bissexto.`
         } else {
             documento.innerHTML = `O ano ${ano} não é bissexto.`

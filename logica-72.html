@@ -1,0 +1,30 @@
+<script>
+let notas;
+let arrNotas = [];
+let media;
+let totalNotas = 0;
+
+for(let i = 0; i < 10; i++) {
+  notas = parseFloat(prompt("Digite a nota dos alunos:"));
+
+  totalNotas+=notas;
+  media = totalNotas/10;
+  arrNotas.push(notas);
+
+};
+
+console.log(arrNotas);
+console.log(`A média da turma é ${media}`);
+console.log("A maior nota foi: " + Math.max.apply(0, arrNotas));
+
+let notasAcimaMedia = arrNotas.reduce(function(iteracaoNotas, index, nota) {
+
+  iteracaoNotas[nota >= media ? 'acimaMedia' : 'abaixoMedia'] += 1;
+
+  return iteracaoNotas;
+  
+}, { acimaMedia: 0, abaixoMedia: 0 });
+
+console.log(notasAcimaMedia);
+
+</script>

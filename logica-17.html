@@ -26,14 +26,12 @@ input[type=number] {
     form.addEventListener('submit', function(e){
 
         let ano = parseInt(document.getElementById("inputAno").value);
-        let idade = 2021 - ano;
+        let idade = new Date().getFullYear() - ano;
 
         const documento = document.getElementById("app");
 
-        if(idade < 16 && idade > 0) {
+        if(idade < 16 && idade >= 0) {
             documento.innerHTML = `Você ainda não pode votar! Aguarde completar 16 anos.`
-        } else if(idade < 0) {
-            documento.innerHTML = `Insira um ano válido. Não é possível ir para o futuro.`
         } else if(idade > 16) {
             documento.innerHTML = `Você já pode votar. Por favor, dirija-se ao seu colégio eleitoral.`
         }

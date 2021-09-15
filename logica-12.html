@@ -29,12 +29,10 @@ input[type=number] {
     form.addEventListener('submit', function(e){
         var salarioAntigo = parseFloat(document.getElementById("inputNumero").value);
 
-        var aumento = salarioAntigo * 0.15;
-
-        var salarioNovo = salarioAntigo + aumento;
+        var aumento = salarioAntigo * 1.15;
 
         var documento2 = document.getElementById('app2');
-        documento2.innerHTML = `<h2>O salário atual é: R$${salarioNovo}.</h2>`;
+        documento2.innerHTML = `<h2>O salário atual é: R$${aumento}.</h2>`;
 
         e.preventDefault();
     });
