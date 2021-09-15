@@ -1,8 +1,6 @@
 <form id="formulario">
-    <p>Quantos cigarros você fuma por dia?</p>
-    <input type="number" id="inputQtd" placeholder="Cigarros/dia" step=1 min=0>
-    <p>Há quantos anos você fuma?</p>
-    <input type="number" id="inputAnos" placeholder="Anos" step=1 min=0>
+    <p>Número de dias trabalhados no mês:</p>
+    <input type="number" id="inputDias" placeholder="Dias trabalhados" step=1 min=0>
     <input type="submit" value="Enviar">
 </form>
 <div id="app">
@@ -26,19 +24,14 @@ input[type=number] {
     var form = document.getElementById("formulario");
 
     form.addEventListener('submit', function(e){
-        
-        let cigarrosDia = parseInt(document.getElementById("inputQtd").value);
-        let anosFumados = parseInt(document.getElementById("inputAnos").value);
+        let diasTrabalhados = parseInt(document.getElementById('inputDias').value);
 
-        let anosEmDias = anosFumados * 365;
-
-        let diasPerdidos = (0.00694 * cigarrosDia * anosEmDias).toFixed(2);
+        let calcSalario = diasTrabalhados * 8 * 25;
 
         const documento = document.getElementById("app");
-        documento.innerHTML = `<h3>Você está perdendo ${diasPerdidos} dias de sua vida.</h3>`;
+        documento.innerHTML = `<h3>O salário é de R$${calcSalario}.</h3>`;
 
         e.preventDefault();
-
     });
 
 </script>

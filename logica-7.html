@@ -2,21 +2,12 @@
 </div>
 
 <script>
-    let distanciaEscolhida = parseFloat(prompt("Digite uma distância em metros."));
-    let km = distanciaEscolhida/1000;
-    let hm = distanciaEscolhida/100;
-    let dam = distanciaEscolhida/10;
-    let dm = distanciaEscolhida*10;
-    let cm = distanciaEscolhida*100;
-    let mm = distanciaEscolhida*1000;
+    let numeroEscolhido = parseFloat(prompt("Digite um número."));
+    let dobroNumero = numeroEscolhido * 2;
+    let tercaNumero = (numeroEscolhido / 3).toFixed(2);
 
     let documento = document.getElementById("app");
 
-    documento.innerHTML = `<h2>A distância de ${distanciaEscolhida}m corresponde a:<br>
-                            ${km}Km<br>
-                            ${hm}Hm<br>
-                            ${dam}Dam<br>
-                            ${dm}Dm<br>
-                            ${cm}Cm<br>
-                            ${mm}Mm</h2>`;
+    documento.innerHTML = `<h2>O dobro de ${numeroEscolhido} é ${dobroNumero}.<hr>
+                            A terça parte de ${numeroEscolhido} é ${tercaNumero}.</h2>`;
 </script>

@@ -1,0 +1,17 @@
+<script>
+let numeros;
+let arrNumeros = [];
+let multiplosDez = []; 
+
+for(let i = 0; i < 15; i++) {
+  numeros = parseInt(prompt("Digite números inteiros:"));
+  arrNumeros.push(numeros);
+
+  if(numeros % 10 === 0){
+    console.log("["+ numeros + " - " + i +"]");
+  };
+
+};
+console.log(arrNumeros);
+
+</script>

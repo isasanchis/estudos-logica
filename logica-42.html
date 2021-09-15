@@ -1,25 +1,24 @@
+<form id="formulario">
+	<label for="inputNumber">Digite um número inteiro e positivo:</label>
+	<br>
+	<input type="number" id="inputNumber" min=0 placeholder="Número positivo">
+	<input type="submit" value="Enviar">
+</form>
+
 <script>
-let cont = 1;
-let maiorValor = 0;
-let menorValor = 0;
+let documento = document.getElementById("formulario");
 
-while(cont <= 8) {
-	let produto = parseInt(prompt(`Digite o preço do ${cont} do produto: `));
-
-	if (cont == 1) {
-		maiorValor = produto;
-		menorValor = produto;
+formulario.addEventListener('submit', function(e) {
+	let numeroEscolhido = document.getElementById("inputNumber").value;
+	let inicio = 0;
+	while(inicio < numeroEscolhido) {
+		inicio++;
+		document.write(inicio + "<br>");
 	}
+	
+	document.write("<br> Acabou!");
 
-	if(produto > maiorValor) {
-		maiorValor = produto;
-
-	} else if(produto < menorValor) {
-		menorValor = produto;
-	}
-	cont++;
-}
-
-alert("O maior produto é: " + maiorValor + " o menor produto é: " + menorValor);
+	e.preventDefault();
+})
 
 </script>

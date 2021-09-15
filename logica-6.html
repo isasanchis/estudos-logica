@@ -2,12 +2,12 @@
 </div>
 
 <script>
-    let numeroEscolhido = parseFloat(prompt("Digite um número."));
-    let dobroNumero = numeroEscolhido * 2;
-    let tercaNumero = (numeroEscolhido / 3).toFixed(2);
+    let chosenNumber = parseInt(prompt("Digite um número inteiro."));
+    let beforeNumber = chosenNumber - 1;
+    let afterNumber = chosenNumber + 1;
 
-    let documento = document.getElementById("app");
+    let documentApp = document.getElementById("app");
 
-    documento.innerHTML = `<h2>O dobro de ${numeroEscolhido} é ${dobroNumero}.<hr>
-                            A terça parte de ${numeroEscolhido} é ${tercaNumero}.</h2>`;
+    documentApp.innerHTML = `<h2>O antecessor de ${chosenNumber} é ${beforeNumber}.<hr>
+                            O sucessor de ${chosenNumber} é ${afterNumber}.</h2>`;
 </script>

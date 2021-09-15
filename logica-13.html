@@ -1,11 +1,10 @@
+<div id="app">
+</div>
 <form id="formulario">
-    <p>Insira a quantidade de KMs percorridos pelo carro:</p>
-    <input type="number" id="inputKm" placeholder="Km" min=0 step=0.01>
-    <p>Quantos dias o carro ficou alugado?</p>
-    <input type="number" id="inputDias" placeholder="Dias" min=0 step=1>
+    <input type="number" id="inputNumero" placeholder="Somente números inteiros" min=0 step=1>
     <input type="submit" value="Enviar">
 </form>
-<div id="app">
+<div id="app2">
 </div>
 
 <style>
@@ -22,19 +21,19 @@ input[type=number] {
 </style>
 
 <script>
+    let documento = document.getElementById("app");
+    documento.innerHTML = `<h2>Insira o salário atual do funcionário:</h2>`;
 
     var form = document.getElementById("formulario");
 
     form.addEventListener('submit', function(e){
-        let kmRodados = parseFloat(document.getElementById("inputKm").value);
-        let diasAlugados = parseInt(document.getElementById("inputDias").value);
+        var salarioAntigo = parseFloat(document.getElementById("inputNumero").value);
 
-        let totalPagar = (kmRodados * 0.2) + (diasAlugados * 90);
+        var aumento = salarioAntigo * 1.15;
 
-        const documento = document.getElementById("app");
-        documento.innerHTML = `<h3>O total a pagar é de R$${totalPagar}.</h3>`;
+        var documento2 = document.getElementById('app2');
+        documento2.innerHTML = `<h2>O salário atual é: R$${aumento}.</h2>`;
 
         e.preventDefault();
     });
-
 </script>

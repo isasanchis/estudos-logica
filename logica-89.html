@@ -1,0 +1,24 @@
+<script>
+let inicio = 0;
+
+function gerador(borda, texto, repeticoes) {
+	switch(borda) {
+		case 1:
+			console.log("+-------=======------+");
+			break;
+		case 2: 
+			console.log("~~~~~~~~:::::::~~~~~~~");
+			break;
+		case 3:
+			console.log("<<<<<<<<------->>>>>>>");
+			break;
+	}
+	do{
+		console.log(texto);
+		inicio++;
+	} while(inicio < repeticoes);
+};
+
+gerador(1, "Portugol", 4);
+
+</script>

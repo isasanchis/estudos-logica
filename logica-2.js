@@ -1,3 +1,2 @@
-let nomeFuncionario = prompt("Qual é o nome do funcionário?");
-let salarioFuncionario = prompt("Qual é o salário deste funcionário?");
-alert("O funcionário " + nomeFuncionario + " tem um salário de R$"+parseFloat(salarioFuncionario));
+let nome = prompt("Qual é o seu nome?");
+alert("Olá, " + nome + ", é um prazer te conhecer!");

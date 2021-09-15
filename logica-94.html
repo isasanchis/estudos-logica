@@ -1,0 +1,17 @@
+<script>
+let primeiroTermo = 0;
+let segundoTermo = 1;
+let fibo = 0;
+
+function fibonnaci(termos) {
+	for(let inicio = 1; inicio <= termos; inicio++) {
+		primeiroTermo = segundoTermo;
+		segundoTermo = fibo;
+		fibo = primeiroTermo + segundoTermo;
+		console.log(fibo);
+	}
+};
+
+fibonnaci(20);
+
+</script>

@@ -1,15 +1,15 @@
 <script>
-let numeros;
-let arr = [];
+let soma = 0;
+let primeiroTermo = parseInt(prompt("Digite o primeiro termo da P.A."));
+let razao = parseInt(prompt("Digite o primeiro termo da P.A."));
+let progArit = primeiroTermo;
 
-for(let i = 0; i < 10; i++) {
-  numeros = parseInt(prompt("Digite números inteiros:"));
-  arr.push(numeros);
+for(i = 0; i < 10 ; i++) {
+  progArit+=razao;
 
-  if(numeros % 2 === 0) {
-    console.log("[" + numeros + " - " + i + "]");
-  };
-};
-console.log(arr);
+  soma+=progArit;
+  console.log(progArit);
+}
+console.log("A soma de todos os elementos é: " + soma);
 
 </script>

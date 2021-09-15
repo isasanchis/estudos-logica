@@ -1,0 +1,24 @@
+<script>
+let nome = [];
+let idade = [];
+let nomeMenor = [];
+let idadeMenor = [];
+
+for(let i = 0; i < 9; i++) {
+    nomePessoa = prompt("Digite o nome:");
+    idadePessoa = parseInt(prompt("Digite a idade:"));
+
+    nome[i] = nomePessoa;
+    idade[i] = idadePessoa;
+
+    if(idade[i] < 18) {
+        nomeMenor = nome[i];
+        idadeMenor = idade[i];
+        console.log(nomeMenor);
+        console.log(idadeMenor);
+    };
+
+};
+
+
+</script>

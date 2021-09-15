@@ -2,14 +2,7 @@
 </div>
 
 <script>
-    let largura = parseFloat(prompt("Qual é a largura da parede? (em m)"));
-    let altura = parseFloat(prompt("Qual é a altura da parede? (em m)"));
-
-    let area = altura * largura;
-    let tinta = area/2;
-
-    let documento = document.getElementById("app");
-
-    documento.innerText = `A área a ser pintada é de ${area}m², e a quantidade de tinta necessária é ${tinta} litros.`;
-
+    let dinheiroCarteira = parseFloat(prompt("Quanto você tem na carteira?"))
+    let calculoDolar = (dinheiroCarteira/3.45).toFixed(2);
+    alert("Você pode comprar " + calculoDolar + " dólares.");
 </script>

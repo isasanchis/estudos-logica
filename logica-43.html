@@ -1,37 +1,11 @@
 <script>
-let cont = 1;
-let total = 0;
-let media;
-let maioridade = 0;
-let menorCinco = 0;
-let maiorValor = 0;
+let inicioContagem = 30;
 
-while (cont <= 10) {
-	let idade = parseInt(prompt(`Digite a idade da ${cont}ª pessoa: `));
-	
-	if(cont == 1) {
-		maiorValor = idade;
+while(inicioContagem >= 0) {
+	if(inicioContagem % 4 === 0) {
+		inicioContagem = [inicioContagem];
 	}
-
-	if(idade > maiorValor) {
-		maiorValor = idade;
-	}
-	
-	if(idade > 18) {
-		maioridade++;
-	}
-	if(idade < 5) {
-		menorCinco++;
-	}
-	
-	total+=idade++;
-	media = total / 10;
-
-	cont++;
+	console.log(inicioContagem);
+	inicioContagem--;
 }
-console.log("Maior do que 18: " + maioridade);
-console.log("Menor do que 5 anos: " + menorCinco);
-console.log("Dentre essas idades, a maior é: " + maiorValor);
-console.log("A média de todas as idades é: " + media);
-
 </script>

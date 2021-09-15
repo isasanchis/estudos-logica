@@ -1,9 +1,15 @@
+<div>
+  <button onclick="add()">Adicionar</button>
+</div>
+
 <script>
-let arrNumber = Array.from({length: 20}, () => Math.floor(Math.random() * 100));
 
-function compareNumbers(a, b) {
-    return a - b;
-};
+let arr = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
 
-console.log(arrNumber.sort(compareNumbers));
+function add() {
+  let lastElement = arr[arr.length - 1];
+  arr.push(lastElement - 1);
+  console.log(arr);
+}
+
 </script>

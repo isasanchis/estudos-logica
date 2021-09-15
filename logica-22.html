@@ -1,23 +1,8 @@
 <form id="formulario">
-    <fieldset>
-        <legend>Promoção: Dia das Mulheres!</legend>
-        <br>
-        <label for="inputNome">Digite o seu nome</label>
-        <input type="text" id="inputNome" name="inputNome" placeholder="Nome" style="margin-bottom: 10px;">
-        <br>
-        <label for="inputSexo">Qual é o seu sexo?</label>
-        <select name="sexo" id="selectSexo" style="margin-bottom: 10px;">
-            <option value="feminino">Feminino</option>
-            <option value="masculino">Masculino</option>
-        </select>
-        <br>
-        <label for="inputCompras">Qual foi o valor de suas compras?</label>
-        <input type="number" id="inputCompras" step=0.01 min=0 placeholder="Valor" style="margin-bottom: 10px;">
-        <br>
-        <input type="submit" value="Enviar">
-    </fieldset>
+    <p>Digite o ano em que nasceu.</p>
+    <input type="number" id="inputAno" placeholder="Ano" step=1 min=0 max=2021>
+    <input type="submit" value="Enviar">
 </form>
-
 <div id="app">
 </div>
 
@@ -40,20 +25,17 @@ input[type=number] {
 
     form.addEventListener('submit', function(e){
 
-        let nome = document.getElementById("inputNome").value;
-        let sexo = document.getElementById("selectSexo").value;
-        let compras = parseFloat(document.getElementById("inputCompras").value);
+        let ano = parseInt(document.getElementById("inputAno").value);
+        let idadeAtual = 2021 - ano;
 
         const documento = document.getElementById("app");
 
-        if(sexo == "feminino") {
-            let descontoFem = compras * 0.87;
-
-            documento.innerHTML = `O novo valor das suas compras, com desconto, é R$${descontoFem}.` 
+        if(idadeAtual > 18) {
+            let anosPassaram = idadeAtual - 18;
+            documento.innerHTML = `Já se passaram ${anosPassaram} anos do seu alistamento militar.`
         } else {
-            let descontoMasc = compras * 0.95;
-
-            documento.innerHTML = `O novo valor das suas compras, com desconto, é R$${descontoMasc}.` 
+            let anosFaltam = 18 - idadeAtual;
+            documento.innerHTML = `Faltam ${anosFaltam} anos para o seu alistamento militar.`
         }
 
         e.preventDefault();

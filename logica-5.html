@@ -2,12 +2,11 @@
 </div>
 
 <script>
-    let chosenNumber = parseInt(prompt("Digite um número inteiro."));
-    let beforeNumber = chosenNumber - 1;
-    let afterNumber = chosenNumber + 1;
+    let primeiraNota = parseFloat(prompt("Digite a primeira nota."));
+    let segundaNota = parseFloat(prompt("Digite a segunda nota."));
+    let media = (primeiraNota + segundaNota)/2;
+    let documento = document.getElementById("app");
 
-    let documentApp = document.getElementById("app");
-
-    documentApp.innerHTML = `<h2>O antecessor de ${chosenNumber} é ${beforeNumber}.<hr>
-                            O sucessor de ${chosenNumber} é ${afterNumber}.</h2>`;
+    documento.innerHTML = `<h1>A média entre ${primeiraNota} e ${segundaNota} é igual a ${media}</h1>`;
+    
 </script>

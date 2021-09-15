@@ -1,31 +1,13 @@
 <script>
-let salario;
-let sexo;
-let contador = 0;
-let continuar;
-let totalHomens = 0;
-let totalMulheres = 0;
+let soma = 0;
+let cont = 1;
+let num;
 
-while(contador <= contador) {
-  sexo = prompt("Digite o sexo do funcionário (F ou M):");
-  salario = parseInt(prompt("Digite o salário desse funcionário:"));
-  continuar = prompt("Deseja continuar? (S ou N)");
-
-  if(sexo === "F") {
-    totalMulheres+=salario++;
-  } else if(sexo === "M") {
-    totalHomens+=salario++;
-  }
-
-  if(continuar === "S") {
-    continue;
-  } else if(continuar === "N") {
-    break;
-  }
-
-  contador++;
+while(cont <= 7) {
+	num = parseInt(prompt("Digite um número inteiro:"));
+	soma += num;
+	cont++;
 }
-console.log(totalMulheres);
-console.log(totalHomens);
+alert(soma);
 
 </script>

@@ -1,0 +1,17 @@
+<script>
+
+function maior(numUm, numDois, numTres) {
+	if(numUm > numDois && numUm > numTres) {
+		console.log(`O número ${numUm} é maior do que ${numDois} e ${numTres}`);
+	} else if(numDois > numUm && numDois > numTres) {
+		console.log(`O número ${numDois} é maior do que ${numUm} e ${numTres}`);
+	} else if(numTres > numUm && numTres > numDois) {
+		console.log(`O número ${numTres} é maior do que ${numUm} e ${numDois}`);
+	} else {
+		console.log("Alguns dos números são iguais!");
+	}
+};
+
+maior(1, 150, 50);
+
+</script>

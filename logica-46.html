@@ -1,26 +1,8 @@
 <script>
-let contador = 1;
-let tentativas = 4;
-let opcoes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-let aleatorio = opcoes[Math.floor(Math.random() * opcoes.length)];
-let escolha;
-
-while(contador <= 4) {
-  escolha = parseInt(prompt(`Tente adivinhar um número aleatório entre 1 e 10. Tentativa: ${tentativas}`));
-
-  if(escolha === aleatorio) {
-    alert("Você acertou o número!");
-    break;
-  }
-
-  if(tentativas === 1) {
-    alert("Você perdeu! Tente novamente.");
-  }
-
-  tentativas--;
-  contador++;
-  console.log(aleatorio);
-  console.log(aleatorio);
-}
-
+	let number = 6;
+	let sum = 0;
+	while(number <= 100) {
+		sum+=number++;
+	}
+	console.log(sum);
 </script>

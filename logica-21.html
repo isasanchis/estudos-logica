@@ -1,6 +1,6 @@
 <form id="formulario">
-    <p>Digite o ano em que nasceu.</p>
-    <input type="number" id="inputAno" placeholder="Ano" step=1 min=0 max=2021>
+    <p>Digite um ano para saber se é bissexto.</p>
+    <input type="number" id="inputAno" placeholder="Ano" step=1 min=0>
     <input type="submit" value="Enviar">
 </form>
 <div id="app">
@@ -26,16 +26,13 @@ input[type=number] {
     form.addEventListener('submit', function(e){
 
         let ano = parseInt(document.getElementById("inputAno").value);
-        let idadeAtual = 2021 - ano;
 
         const documento = document.getElementById("app");
 
-        if(idadeAtual > 18) {
-            let anosPassaram = idadeAtual - 18;
-            documento.innerHTML = `Já se passaram ${anosPassaram} anos do seu alistamento militar.`
+        if((ano % 4 === 0) || (ano % 100 === 0) && (ano % 400 === 0)){
+            documento.innerHTML = `O ano ${ano} é bissexto.`
         } else {
-            let anosFaltam = 18 - idadeAtual;
-            documento.innerHTML = `Faltam ${anosFaltam} anos para o seu alistamento militar.`
+            documento.innerHTML = `O ano ${ano} não é bissexto.`
         }
 
         e.preventDefault();

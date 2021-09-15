@@ -2,10 +2,13 @@
 </div>
 
 <script>
-    let precoProduto = parseFloat(prompt("Qual é o preço do produto?"));
-    let desconto = precoProduto * 1.05;
+    let A = parseFloat(prompt("Digite o número de A."));
+    let B = parseFloat(prompt("Digite o número de B."));
+    let C = parseFloat(prompt("Digite o número de C."));
+
+    let delta = Math.pow(B, 2) - 4 * A * C;
 
     let documento = document.getElementById("app");
-    
-    documento.innerText = `O preço promocional é ${desconto}.`;
+    documento.innerText = `O valor de delta é ${delta}.`;
+
 </script>

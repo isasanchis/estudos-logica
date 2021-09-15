@@ -1,14 +1,47 @@
+<form id="formulario">
+	<fieldset>
+		<legend>Descubra o número que será sorteado!</legend>
+		<label for="inputNumero">O número será de 1 a 5:</label>
+		<br>
+		<input type="number" id="inputNumero" step=1 min=0 max=5 placeholder="Número">
+		<input type="submit" value="Enviar">
+	</fieldset>
+</form>
 <div id="app">
 </div>
 
-<script>
-var numero = 10;
-
-while(numero > 2) {
-	console.log(numero);
-	numero--;
+<style>
+input {
+	width: 150px;
+	margin-top: 10px;
 }
 
-console.log("Acabou!");
+input[type=number]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+input[type=number] {
+	-moz-appearance: textfield;
+	appearance: textfield;
+}
+</style>
+
+<script>
+	let form = document.getElementById("formulario");
+
+	form.addEventListener('submit', function(e){
+
+		let escolha = document.getElementById("inputNumero").value;
+
+		const documento = document.getElementById("app");
+
+		if(escolha) {
+			let opcoes = ["1","2","3","4","5"];
+			let aleatorio = opcoes[Math.floor(Math.random()*opcoes.length)];
+			documento.innerHTML = `${aleatorio}`;
+		}
+
+		e.preventDefault();
+	});
 
 </script>

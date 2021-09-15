@@ -1,0 +1,9 @@
+<script>
+let arrNumber = Array.from({length: 20}, () => Math.floor(Math.random() * 100));
+
+function compareNumbers(a, b) {
+    return a - b;
+};
+
+console.log(arrNumber.sort(compareNumbers));
+</script>

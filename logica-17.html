@@ -1,6 +1,6 @@
 <form id="formulario">
-    <p>Em que ano você nasceu?</p>
-    <input type="number" id="inputAno" placeholder="Ano" step=1 min=0>
+    <p>Qual é a velocidade do carro?</p>
+    <input type="number" id="inputVeloc" placeholder="Velocidade" step=0.1 min=0>
     <input type="submit" value="Enviar">
 </form>
 <div id="app">
@@ -25,15 +25,14 @@ input[type=number] {
 
     form.addEventListener('submit', function(e){
 
-        let ano = parseInt(document.getElementById("inputAno").value);
-        let idade = new Date().getFullYear() - ano;
-
+        let velocidade = parseFloat(document.getElementById("inputVeloc").value);
         const documento = document.getElementById("app");
 
-        if(idade < 16 && idade >= 0) {
-            documento.innerHTML = `Você ainda não pode votar! Aguarde completar 16 anos.`
-        } else if(idade > 16) {
-            documento.innerHTML = `Você já pode votar. Por favor, dirija-se ao seu colégio eleitoral.`
+        if(velocidade > 80) {
+            let valorMulta = (velocidade - 80) * 5;
+            documento.innerHTML = `<h3>Você foi multado. Valor da multa: R$${valorMulta}.</h3>`;
+        } else {
+            documento.innerHTML = `<h3>Você está dentro do limite de velocidade. Continue assim!</h3>`;
         }
 
         e.preventDefault();

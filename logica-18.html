@@ -1,10 +1,6 @@
 <form id="formulario">
-    <p>Digite seu nome.</p>
-    <input type="text" id="inputNome" placeholder="Nome">
-    <p>Digite a sua primeira nota.</p>
-    <input type="number" id="inputNotaUm" placeholder="Nota 1" step=0.1 min=0>
-    <p>Digite a sua segunda nota.</p>
-    <input type="number" id="inputNotaDois" placeholder="Nota 2" step=0.1 min=0>
+    <p>Em que ano você nasceu?</p>
+    <input type="number" id="inputAno" placeholder="Ano" step=1 min=0>
     <input type="submit" value="Enviar">
 </form>
 <div id="app">
@@ -29,19 +25,15 @@ input[type=number] {
 
     form.addEventListener('submit', function(e){
 
-        let nome = document.getElementById("inputNome").value
-        let notaUm = parseFloat(document.getElementById("inputNotaUm").value);
-        let notaDois = parseFloat(document.getElementById("inputNotaDois").value);
-        let media = (notaUm + notaDois)/2;
+        let ano = parseInt(document.getElementById("inputAno").value);
+        let idade = new Date().getFullYear() - ano;
 
         const documento = document.getElementById("app");
 
-        if(media >= 7 && media <= 10) {
-            documento.innerHTML = `Parabéns, ${nome}! Você teve um ótimo aproveitamento.`
-        } else if(media < 7) {
-            documento.innerHTML = `Infelizmente você não teve um bom aproveitamento.`
-        } else {
-            documento.innerHTML = `Insira notas válidas.`
+        if(idade < 16 && idade >= 0) {
+            documento.innerHTML = `Você ainda não pode votar! Aguarde completar 16 anos.`
+        } else if(idade > 16) {
+            documento.innerHTML = `Você já pode votar. Por favor, dirija-se ao seu colégio eleitoral.`
         }
 
         e.preventDefault();

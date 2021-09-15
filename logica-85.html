@@ -1,0 +1,26 @@
+<script>
+let nomeFunc = [];
+let sexoFunc = [];
+let salarioFunc = [];
+let nomeMulher = [];
+let salarioMulher = [];
+
+for(let i = 0; i < 5; i++) {
+    nome = prompt("Digite o nome do funcionário:");
+    sexo = prompt("Digite o sexo deste funcionário (F ou M):");
+    salario = parseInt(prompt("Digite o salário deste funcionário:"));
+
+    nomeFunc[i] = nome;
+    sexoFunc[i] = sexo;
+    salarioFunc[i] = salario;
+
+    if(sexoFunc[i] === "F" && salarioFunc[i] > 5000) {
+        nomeMulher = nomeFunc[i];
+        salarioMulher = salarioFunc[i];
+        console.log(nomeMulher);
+        console.log(salarioMulher);
+    };
+
+};
+
+</script>

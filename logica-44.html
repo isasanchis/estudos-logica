@@ -1,38 +1,41 @@
+<form id="formulario">
+	<label for="firstValue">Valor de inicio:</label>
+	<br>
+	<input type="number" id="firstValue" placeholder="Valor de inicio">
+	<br>
+	<label for="lastValue">Valor final:</label>
+	<br>
+	<input type="number" id="lastValue" placeholder="Valor final">
+	<br>
+	<label for="increment">Incremento:</label>
+	<br>
+	<input type="number" id="increment" min=0 placeholder="Incremento">
+	<br>
+	<input type="submit" value="Enviar">
+</form>
+
 <script>
-let cont = 1;
-let qtdMulheres = 0;
-let qtdHomens = 0;
-let mulheresVinte = 0;
-let totalMedia = 0;
-let totalHomens = 0;
-let mediaGrupo;
-let mediaHomens;
 
-while (cont <= 5) {
-	let idade = parseInt(prompt(`Digite a idade da ${cont}ª pessoa: `));
-	let sexo = prompt(`Digite o sexo da ${cont}ª pessoa: `);
+let form = document.getElementById("formulario");
 
-	if(sexo === "masculino") {
-		qtdHomens++;
-		totalHomens+=idade++
-		mediaHomens = totalHomens/qtdHomens;
-	} else if (sexo === "feminino") {
-		qtdMulheres++;
-			if(idade > 20) {
-				mulheresVinte++;
+	form.addEventListener('submit', function(e) {
+		let firstNumber = parseInt(document.getElementById("firstValue").value);
+		let lastNumber = parseInt(document.getElementById("lastValue").value);
+		let incremento = parseInt(document.getElementById("increment").value);
+
+		if(firstNumber < lastNumber) {
+			while(firstNumber <= lastNumber) {
+				console.log(firstNumber);
+				firstNumber+=incremento;
 			}
-	}
+		} else {
+			while (firstNumber >= lastNumber) {
+			console.log(firstNumber);
+			firstNumber -= incremento;
+			}
+		}
 
-	totalMedia+=idade++;
-	mediaGrupo = totalMedia / 5;
-
-	cont++;
-}
-
-console.log("Quantidade total de homens: " + qtdHomens);
-console.log("Quantidade total de mulheres: " + qtdMulheres);
-console.log("Quantidade total de mulheres acima dos 20 anos: " + mulheresVinte);
-console.log("A média de todas as idades é: " + mediaGrupo);
-console.log("A média de todas os homens é: " + mediaHomens);
+		e.preventDefault();
+	});
 
 </script>

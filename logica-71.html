@@ -1,25 +1,14 @@
+<div>
+  <button onclick="add()">Adicionar</button>
+</div>
+
 <script>
-let idade;
-let arrIdade = [];
-let media;
-let somaIdades = 0;
-let maiorNumero = arrIdade[0];
+let arr = [999, 999, 999, 999, 999, 999, 999, 999,];
 
-for(let i = 0; i < 9; i++) {
-  idade = parseInt(prompt("Digite a idade:"));
-  arrIdade.push(idade);
-
-  if(idade > 25) {
-    console.log(`${idade} - posição: ${i}`);
-  }
-
-  somaIdades+=idade;
-  media = somaIdades/8;
-  
+function add() {
+  arr.push(999);
+  console.log(arr);
 };
 
-console.log(arrIdade);
-console.log(`A média de todas as idades cadastradas é: ${media}`);
-console.log("A maior idade é: " + Math.max.apply(0, arrIdade));
 
 </script>

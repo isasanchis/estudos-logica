@@ -1,22 +1,16 @@
 <form id="formulario">
     <fieldset>
-        <legend>Hora do reajuste salarial!</legend>
-        <label for="inputNome">Digite seu nome:</label>
-        <input type="text" id="inputNome" step=1 min=0 placeholder="Nome" style="margin-bottom: 10px;">
+        <legend>Digite abaixo a largura e o comprimento do terreno (em m):</legend>
+        <label>Largura:</label>
+        <input type="number" id="inputLargura" step=1 min=0 placeholder="Largura" style="margin-bottom: 10px;">
         <br>
-        <label for="inputSalario">Digite seu salário atual:</label>
-        <input type="number" id="inputSalario" step=1 min=0 placeholder="Salário" style="margin-bottom: 10px;">
-        <br>
-        <label for="anosEmpresa">Quantos anos você trabalha na empresa?</label>
-        <select name="anos" id="anosEmpresa" style="margin-bottom: 10px;">
-            <option value="tresAnos">Até 3 anos</option>
-            <option value="tresDezAnos">Entre 3 e 10 anos</option>
-            <option value="dezAnos">10 anos ou mais</option>
-        </select>
+        <label>Comprimento:</label>
+        <input type="number" id="inputComp" step=1 min=0 placeholder="Comprimento" style="margin-bottom: 10px;">
         <br>
         <input type="submit" value="Enviar">
     </fieldset>
 </form>
+
 <div id="app">
 </div>
 
@@ -36,24 +30,18 @@ input[type=number] {
 
     form.addEventListener('submit', function(e){
 
-        let nome = document.getElementById("inputNome").value;
-        let salario = parseInt(document.getElementById("inputSalario").value);
-        let anosEmpresa = document.getElementById("anosEmpresa").value;
-        
+        let largura = parseInt(document.getElementById("inputLargura").value);
+        let comprimento = parseInt(document.getElementById("inputComp").value);
+        let area = largura * comprimento;
+
         const documento = document.getElementById("app");
 
-        if(anosEmpresa == "tresAnos") {
-            const reajuste = salario * 0.03;
-            const novoSalario = salario + reajuste;
-            documento.innerHTML = `${nome}, seu novo salário é: R$${novoSalario}.`
-        } else if(anosEmpresa == "tresDezAnos") {
-            const reajuste = salario * 0.125;
-            const novoSalario = salario + reajuste;
-            documento.innerHTML = `${nome}, seu novo salário é: R$${novoSalario}.`
-        } else {
-            const reajuste = salario * 0.2;
-            const novoSalario = salario + reajuste;
-            documento.innerHTML = `${nome}, seu novo salário é: R$${novoSalario}.`
+        if(area < 100) {
+            documento.innerHTML = `TERRENO POPULAR. Área: ${area}m².`
+        } else if(area > 100 && area < 500) {
+            documento.innerHTML = `TERRENO MASTER. Área: ${area}m².`
+        } else if(area > 500){
+            documento.innerHTML = `TERRENO VIP. Área: ${area}m².`
         }
 
         e.preventDefault();

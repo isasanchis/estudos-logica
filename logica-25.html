@@ -1,11 +1,14 @@
 <form id="formulario">
     <fieldset>
-        <legend>Digite dois números inteiros:</legend>
-        <label>Número 1:</label>
-        <input type="number" id="inputUm" step=1 placeholder="Número inteiro" style="margin-bottom: 10px;">
+        <legend>Digite os segmentos das três retas nos campos abaixo:</legend>
+        <label>Reta 1:</label>
+        <input type="number" id="inputUm" step=1 min=0 placeholder="Ex: 5cm" style="margin-bottom: 10px;">
         <br>
-        <label>Número 2:</label>
-        <input type="number" id="inputDois" step=1 placeholder="Número inteiro" style="margin-bottom: 10px;">
+        <label>Reta 2:</label>
+        <input type="number" id="inputDois" step=1 min=0 placeholder="Ex: 5cm" style="margin-bottom: 10px;">
+        <br>
+        <label>Reta 3:</label>
+        <input type="number" id="inputTres" step=1 min=0 placeholder="Ex: 5cm" style="margin-bottom: 10px;">
         <br>
         <input type="submit" value="Enviar">
     </fieldset>
@@ -30,18 +33,18 @@ input[type=number] {
     let form = document.getElementById("formulario");
 
     form.addEventListener('submit', function(e){
-
-        let numeroUm = parseInt(document.getElementById("inputUm").value);
-        let numeroDois = parseInt(document.getElementById("inputDois").value);
+        let retaUm = parseInt(document.getElementById("inputUm").value);
+        let retaDois = parseInt(document.getElementById("inputDois").value);
+        let retaTres = parseInt(document.getElementById("inputTres").value);
 
         const documento = document.getElementById("app");
 
-        if(numeroUm > numeroDois) {
-            documento.innerHTML = `O número ${numeroUm} é maior do que ${numeroDois}.`
-        } else if (numeroUm === numeroDois) {
-            documento.innerHTML = `Não existe valor maior. Ambos são iguais.`
+        if(retaUm === retaDois && retaDois === retaTres) {
+            documento.innerText = `O triângulo é equilátero.`
+        } else if(retaUm === retaDois || retaUm === retaTres || retaDois === retaTres) {
+            documento.innerText = `O triângulo é isósceles.`
         } else {
-            documento.innerHTML = `O número ${numeroDois} é maior do que ${numeroUm}.`
+            documento.innerText = `O triângulo é escaleno.`
         }
 
         e.preventDefault();

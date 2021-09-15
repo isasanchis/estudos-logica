@@ -1,11 +1,11 @@
 <form id="formulario">
     <fieldset>
-        <legend>Digite as duas notas da prova:</legend>
-        <label>Nota 1:</label>
-        <input type="number" id="inputUm" step=1 placeholder="Nota" style="margin-bottom: 10px;">
+        <legend>Digite dois números inteiros:</legend>
+        <label>Número 1:</label>
+        <input type="number" id="inputUm" step=1 placeholder="Número inteiro" style="margin-bottom: 10px;">
         <br>
-        <label>Nota 2:</label>
-        <input type="number" id="inputDois" step=1 placeholder="Nota" style="margin-bottom: 10px;">
+        <label>Número 2:</label>
+        <input type="number" id="inputDois" step=1 placeholder="Número inteiro" style="margin-bottom: 10px;">
         <br>
         <input type="submit" value="Enviar">
     </fieldset>
@@ -31,18 +31,17 @@ input[type=number] {
 
     form.addEventListener('submit', function(e){
 
-        let notaUm = parseInt(document.getElementById("inputUm").value);
-        let notaDois = parseInt(document.getElementById("inputDois").value);
-        let media = (notaUm + notaDois)/2;
+        let numeroUm = parseInt(document.getElementById("inputUm").value);
+        let numeroDois = parseInt(document.getElementById("inputDois").value);
 
         const documento = document.getElementById("app");
 
-        if(media >= 7) {
-            documento.innerHTML = `Aprovado!`;
-        } else if(media <= 4.9) {
-            documento.innerHTML = `Reprovado.`;
-        } else if(5 <= media <= 6.9) {
-            documento.innerHTML = `Recuperação.`;
+        if(numeroUm > numeroDois) {
+            documento.innerHTML = `O número ${numeroUm} é maior do que ${numeroDois}.`
+        } else if (numeroUm === numeroDois) {
+            documento.innerHTML = `Não existe valor maior. Ambos são iguais.`
+        } else {
+            documento.innerHTML = `O número ${numeroDois} é maior do que ${numeroUm}.`
         }
 
         e.preventDefault();

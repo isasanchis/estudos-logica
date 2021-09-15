@@ -1,10 +1,26 @@
 <script>
-let escolha = parseInt(prompt("Escolha um número:"));
-let calculo;
+let contador = 1;
+let tentativas = 4;
+let opcoes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let aleatorio = opcoes[Math.floor(Math.random() * opcoes.length)];
+let escolha;
 
-for(let i = 0; i <= 10; i++) {
-  calculo = escolha * i;
-  console.log(escolha + " x " + i + " = " + calculo);
+while(contador <= 4) {
+  escolha = parseInt(prompt(`Tente adivinhar um número aleatório entre 1 e 10. Tentativa: ${tentativas}`));
+
+  if(escolha === aleatorio) {
+    alert("Você acertou o número!");
+    break;
+  }
+
+  if(tentativas === 1) {
+    alert("Você perdeu! Tente novamente.");
+  }
+
+  tentativas--;
+  contador++;
+  console.log(aleatorio);
+  console.log(aleatorio);
 }
 
 </script>

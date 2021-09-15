@@ -1,11 +1,11 @@
 <form id="formulario">
     <fieldset>
-        <legend>Digite abaixo a largura e o comprimento do terreno (em m):</legend>
-        <label>Largura:</label>
-        <input type="number" id="inputLargura" step=1 min=0 placeholder="Largura" style="margin-bottom: 10px;">
+        <legend>Digite as duas notas da prova:</legend>
+        <label>Nota 1:</label>
+        <input type="number" id="inputUm" step=1 placeholder="Nota" style="margin-bottom: 10px;">
         <br>
-        <label>Comprimento:</label>
-        <input type="number" id="inputComp" step=1 min=0 placeholder="Comprimento" style="margin-bottom: 10px;">
+        <label>Nota 2:</label>
+        <input type="number" id="inputDois" step=1 placeholder="Nota" style="margin-bottom: 10px;">
         <br>
         <input type="submit" value="Enviar">
     </fieldset>
@@ -15,6 +15,7 @@
 </div>
 
 <style>
+
 input[type=number]::-webkit-inner-spin-button { 
     -webkit-appearance: none;
 }
@@ -30,18 +31,18 @@ input[type=number] {
 
     form.addEventListener('submit', function(e){
 
-        let largura = parseInt(document.getElementById("inputLargura").value);
-        let comprimento = parseInt(document.getElementById("inputComp").value);
-        let area = largura * comprimento;
+        let notaUm = parseInt(document.getElementById("inputUm").value);
+        let notaDois = parseInt(document.getElementById("inputDois").value);
+        let media = (notaUm + notaDois)/2;
 
         const documento = document.getElementById("app");
 
-        if(area < 100) {
-            documento.innerHTML = `TERRENO POPULAR. Área: ${area}m².`
-        } else if(area > 100 && area < 500) {
-            documento.innerHTML = `TERRENO MASTER. Área: ${area}m².`
-        } else if(area > 500){
-            documento.innerHTML = `TERRENO VIP. Área: ${area}m².`
+        if(media >= 7) {
+            documento.innerHTML = `Aprovado!`;
+        } else if(media <= 4.9) {
+            documento.innerHTML = `Reprovado.`;
+        } else if(5 <= media <= 6.9) {
+            documento.innerHTML = `Recuperação.`;
         }
 
         e.preventDefault();

@@ -1,0 +1,21 @@
+<script>
+
+function media(notaUm, notaDois) {
+	let media = (notaUm + notaDois) / 2;
+	console.log(media);
+	situacao(media);
+};
+
+function situacao(media) {
+	if(media >= 6) {
+		console.log("APROVADO!");
+	} else if(media <= 5.9 && media >= 4) {
+		console.log("RECUPERAÇÃO!");
+	} else if(media < 4) {
+		console.log("REPROVADO!");
+	};
+}
+
+media(10, 5);
+
+</script>

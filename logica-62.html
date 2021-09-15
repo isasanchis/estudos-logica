@@ -1,13 +1,35 @@
-<div>
-  <button onclick="add()">Adicionar</button>
-</div>
-
 <script>
-let arr = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+let idade;
+let continuar;
+let contador = 0;
+let qtdIdades = 0;
+let maiorVinteUm = 0;
+let somaIdades = 0;
+let media;
 
-function add() {
-  arr.push(arr.length * 5);
-  console.log(arr);
-};
+do {
+  idade = parseInt(prompt("Digite a idade:"));
+  continuar = prompt("Deseja continuar? (S ou N)");
+
+  if(idade > 21) {
+    maiorVinteUm++;
+  }
+
+  qtdIdades++;
+
+  somaIdades+=idade++;
+  media = somaIdades/qtdIdades;
+
+  if(continuar === "S") {
+    continue;
+  } else if(continuar === "N") {
+    break;
+  }
+
+} while(contador <= contador);
+
+console.log("A quantidade de idades digitadas é: " + qtdIdades);
+console.log("Maiores do que 21 anos: " + maiorVinteUm);
+console.log("A média de todas as idades inseridas é: " + media);
 
 </script>

@@ -1,6 +1,6 @@
 <form id="formulario">
-    <p>Digite um ano para saber se é bissexto.</p>
-    <input type="number" id="inputAno" placeholder="Ano" step=1 min=0>
+    <p>Digite um número.</p>
+    <input type="number" id="inputNumero" placeholder="Número" step=0.01>
     <input type="submit" value="Enviar">
 </form>
 <div id="app">
@@ -25,14 +25,13 @@ input[type=number] {
 
     form.addEventListener('submit', function(e){
 
-        let ano = parseInt(document.getElementById("inputAno").value);
-
+        let numero = parseFloat(document.getElementById("inputNumero").value);
         const documento = document.getElementById("app");
 
-        if((ano % 4 === 0) || (ano % 100 === 0) && (ano % 400 === 0)){
-            documento.innerHTML = `O ano ${ano} é bissexto.`
+        if(numero % 2 === 0) {
+            documento.innerHTML = `O número ${numero} é par.`
         } else {
-            documento.innerHTML = `O ano ${ano} não é bissexto.`
+            documento.innerHTML = `O número ${numero} é ímpar.`
         }
 
         e.preventDefault();

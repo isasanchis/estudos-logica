@@ -1,8 +1,40 @@
 <script>
+let contador = 1;
+let peso;
+let altura = 0;
+let pesoNoventa = 0;
+let pessoasBaixas = 0;
+let pessoasAltas = 0;
+let mediaAltura;
+let totalMedia = 0;
 
-for(let i = 100; i >= 0; i-=10) {
-  console.log(i);
-}
-console.log("Acabou!");
+while(contador <= 7) {
+  peso = parseFloat(prompt(`Digite o peso da ${contador}ª pessoa:`));
+  altura = parseFloat(prompt(`Digite a altura da ${contador}ª pessoa:`));
+
+  if(peso > 90) {
+    pesoNoventa++;
+  }
+
+  if(peso < 50 && altura < 1.60) {
+    pessoasBaixas++;
+  }
+
+  if(peso > 100 && altura > 1.90) {
+    pessoasAltas++;
+  }
+
+  totalMedia+=altura++;
+  mediaAltura = totalMedia/7;
+
+  contador++;
+};
+
+console.log("Pessoas acima de 90kg: " + pesoNoventa);
+console.log("Pessoas abaixo dos 50kg e abaixo dos 1.60m: " + pessoasBaixas);
+console.log("Pessoas acima dos 100kg e acima dos 1.90m: " + pessoasAltas);
+console.log("A média de todas as alturas é: " + mediaAltura);
 
 </script>
+
+
